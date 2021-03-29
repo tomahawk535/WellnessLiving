@@ -37,15 +37,16 @@ header {
   display: flex;
   flex-wrap: wrap;
   background-color:  $header-bg-color;
+  padding-right: 15%;
   .brand-logo {
-    flex-basis: 50%;
+    flex-basis: 55%;
     img {
       width: 100%;
       height: 100%;
     }
   }
   .brand-info {
-    flex-basis: 50%;
+    flex-basis: 45%;
     padding: 6.25rem  2.5rem 5.625rem;
     h1 {
       @include main-headers;
@@ -59,16 +60,61 @@ header {
     p{
       @include paragraph;
       color: $header-p-color;
-      width: 75%;
       margin-top: 0.625rem;
     }
+  }
+}
+footer {
+  background-image: url("../../img/footer-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5.9375rem 20% 5rem;
+  color: $secondary-color;
+  display: flex;
+  flex-wrap: wrap;
+  h2 {
+    @include main-headers;
+    flex-basis: 100%;
+  }
+  .step {
+    flex-basis: 80%;
+    .step-item {
+      display: flex;
+      flex-wrap: wrap;
+      flex-basis: 100%;
+      align-items: stretch;
+      margin-top: 1.25rem;
+      .step-num {
+        flex-basis: 15%;
+        text-align: center;
+        background: linear-gradient(to right, transparent 5%, #fff 5% 8%, transparent 8% 92%, #fff 92% 95%,transparent 95%),
+        linear-gradient(rgba(0,0,0, 0.4) 5%, #fff 5% 8%, rgba(0,0,0, 0.4) 8% 92%, #fff 92% 95%,rgba(0,0,0, 0.4) 95%);
+        text-transform: uppercase;
+        height: 100%;
+        padding: 1.25rem;
+      }
+      p{
+        flex-basis: 80%;
+        @include paragraph;
+        margin-left: 1.75em;
+
+      }
+    }
+
   }
 }
 
 
 @media all and (max-width: 800px) {
   header {
+    padding: 0;
     .brand-logo, .brand-info {
+      flex-basis: 100%;
+    }
+  }
+  footer {
+    padding: 3.9375rem 5% 2rem;
+    .step {
       flex-basis: 100%;
     }
   }
