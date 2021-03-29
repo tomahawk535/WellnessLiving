@@ -1,2 +1,75 @@
+$header-bg-color: #ecf1f4;
+$summary-bg-color: #fe4c8d;
+$footer-bg-color: #fea100;
+$main-bg-color: #fff;
+$btn-bg-color: #fea100;
+
+// fonts color
+$primary-color: #14141d;
+$header-p-color: #5c6369;
+$secondary-color: #fff;
+$main-font: 'Open Sans', sans-serif;
 
 
+//text-style
+@mixin paragraph {
+  font-size: 0.875rem;
+  line-height: 1.625rem;
+  font-family: $main-font;
+  font-weight: 400;
+}
+@mixin main-headers {
+  font-size: 2.1875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+@mixin sub-headers {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.0625rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  background-color:  $header-bg-color;
+  .brand-logo {
+    flex-basis: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .brand-info {
+    flex-basis: 50%;
+    padding: 6.25rem  2.5rem 5.625rem;
+    h1 {
+      @include main-headers;
+      color:  $primary-color;
+    }
+    h2 {
+      @include sub-headers;
+      color:  $primary-color;
+      margin-top: 2.0625rem;
+    }
+    p{
+      @include paragraph;
+      color: $header-p-color;
+      width: 75%;
+      margin-top: 0.625rem;
+    }
+  }
+}
+
+
+@media all and (max-width: 800px) {
+  header {
+    .brand-logo, .brand-info {
+      flex-basis: 100%;
+    }
+  }
+}
