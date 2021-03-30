@@ -32,31 +32,94 @@
 
         </div>
     </header>
+    <article>
+        <table class="cart">
+            <caption class="cart-name">Product Cart</caption>
+            <thead class="cart-props">
+                <tr>
+                    <th class="item">Item</th>
+                    <th class="price">Price</th>
+                    <th class="qty">Qty</th>
+                    <th class="total-price">Subtotal</th>
+                </tr>
+            </thead>
+            <tbody class="cart-item">
+                <tr class="item-row">
+                    <td class="item">
+                        <img class="cart-item-img" src="img/cart-item-3.jpg" width="115px" height="115px" alt="img">
+                        <p class="cart-item-name">green mung beas</p>
+                        <span class="close-item" >X</span>
+                    </td>
+                    <td class="price">$ 100</td>
+                    <td class="qty"> <div class="qty-num"> 1 </div></td>
+                    <td class="total-cost">$ 100</td>
+                </tr>
+                <tr class="item-row">
+                    <td class="item">
+                        <img class="cart-item-img" src="img/cart-item-1.jpg" width="115px" height="115px" alt="img">
+                        <p class="cart-item-name">laird green ientils</p>
+                        <span class="close-item" >X</span>
+                    </td>
+                    <td class="price">$ 100</td>
+                    <td class="qty"> <div class="qty-num"> 1 </div></td>
+                    <td class="total-cost">$ 100</td>
+                </tr>
+                <tr class="item-row">
+                    <td class="item">
+                        <img class="cart-item-img" src="img/cart-item-2.jpg" width="115px" height="115px" alt="img">
+                        <p class="cart-item-name">Fava bean</p>
+                        <span class="close-item" >X</span>
+                    </td>
+                    <td class="price">$ 100</td>
+                    <td class="qty"> <div class="qty-num"> 1 </div></td>
+                    <td class="total-cost">$ 100</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="summary">
+            <div class="summary-info">
+                <h3>Summary</h3>
+                <p>Subtotal:  </p><span id="total-cost-sum">$300</span>
+                <p>Shipping cost: </p><span>$0</span>
+                <p> Tax:   </p><span>$10</span>
+            </div>
+            <div class="summary-order">
+                <h3 class="summary-order_total-price"> Order Total: </h3><span class="allPrice">$ 310</span>
+                <input type="button" value="go to checkout" class="summary-order_check" >
+            </div>
+        </div>
+    </article>
     <footer>
         <h2>Food Step</h2>
         <div class="step">
             <div class="step-item">
-                <div class="step-num">
-                    <span>1</span><br>
-                    <span>STEP</span>
+                <div class="bg">
+                   <div class="step-num">
+                       <span>1</span><br>
+                       <span>STEP</span>
+                   </div>
                 </div>
                 <p>Established fact that a reader will be distracted by the readable content of a page when looking at
                     its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
                     as opposed</p>
             </div>
             <div class="step-item">
-                <div class="step-num">
-                    <span>2</span><br>
-                    <span>STEP</span>
-                </div>
+               <div class="bg">
+                   <div class="step-num">
+                       <span>2</span><br>
+                       <span>STEP</span>
+                   </div>
+               </div>
                 <p>Centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
                     popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
                     recently</p>
             </div>
             <div class="step-item">
-                <div class="step-num">
-                    <span>3</span><br>
-                    <span>STEP</span>
+                <div class="bg">
+                    <div class="step-num">
+                        <span>3</span><br>
+                        <span>STEP</span>
+                    </div>
                 </div>
                 <p>Content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
                     more-or-less normal distribution of letters, as opposed</p>

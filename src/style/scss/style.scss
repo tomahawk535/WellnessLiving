@@ -39,14 +39,14 @@ header {
   background-color:  $header-bg-color;
   padding-right: 15%;
   .brand-logo {
-    flex-basis: 55%;
+    flex-basis: 57%;
     img {
       width: 100%;
       height: 100%;
     }
   }
   .brand-info {
-    flex-basis: 45%;
+    flex-basis: 43%;
     padding: 6.25rem  2.5rem 5.625rem;
     h1 {
       @include main-headers;
@@ -62,6 +62,149 @@ header {
       color: $header-p-color;
       margin-top: 0.625rem;
     }
+  }
+}
+
+article {
+  display: flex;
+  padding: 5.625rem 20%;
+  justify-content: space-between;
+  .cart {
+    flex-basis: 75%;
+    border-collapse: collapse;
+    tr {
+      border-bottom: 2px solid lightgrey;
+    }
+    .cart-name {
+      @include main-headers;
+      margin-bottom: 1.5625rem;
+      text-align: left;
+    }
+    .cart-props {
+      th {
+        text-align: left;
+        color:  $primary-color;
+        font-size: 1.375rem;
+        padding: 1rem 0;
+      }
+    }
+    .cart-item {
+      td {
+        padding: 1rem 0;
+      }
+      .qty, .price, .total-price {
+        width: 15%;
+      }
+      .qty-num {
+        padding: 0.3rem;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        width: 60%;
+        text-align: center;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        p {
+          margin-left: 1rem;
+          @include sub-headers;
+          text-transform: uppercase;
+        }
+        .close-item {
+          width: 25px;
+          height: 25px;
+          color: #fff;
+          background-color: orangered;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top:3%;
+          left: 100px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .summary {
+    flex-basis: 23%;
+    background-color: $summary-bg-color;
+    height: 23.875rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.625em;
+    .summary-info {
+      padding: 1.5625rem 1rem;
+      border: 2px lightgrey dashed;
+      display: flex;
+      flex-wrap: wrap;
+      h3 {
+        @include sub-headers;
+        color: $secondary-color;
+        font-size: 1.375rem;
+        margin-bottom: 1rem;
+        flex-basis: 100%;
+      }
+      p {
+        flex-basis: 70%;
+        text-align: justify;
+        @include paragraph;
+        font-size: 0.9375rem;
+        line-height: 1.75rem;
+        color: #fff;
+        opacity: 0.7;
+      }
+      span{
+        flex-basis: 22%;
+        margin-left: auto;
+        align-self: flex-end;
+        color: #fff;
+        opacity: 0.7;
+      }
+    }
+    .summary-order {
+      padding: 0.625rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      .summary-order_total-price {
+        flex-basis: 75%;
+       @include paragraph;
+        color: $secondary-color;
+        font-size:  0.9375em;
+        line-height: 1.75rem;
+        margin-bottom: 1rem;
+      }
+      span {
+        flex-basis: 25%;
+        align-self: flex-end;
+        color: $secondary-color;
+        font-size:  0.9375em;
+        line-height: 1.75rem;
+        margin-bottom: 1rem;
+      }
+      .summary-order_check {
+        flex-basis: 80%;
+        margin: 0 auto;
+        padding: 0.875rem;
+        background-color:  $btn-bg-color;
+        color:  $secondary-color;
+        text-transform: uppercase;
+        font-family: $main-font;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
   }
 }
 footer {
@@ -84,11 +227,14 @@ footer {
       flex-basis: 100%;
       align-items: stretch;
       margin-top: 1.25rem;
+      .bg {
+        padding: 3px;
+        border: 5px solid rgba(0,0,0, 0.4);
+      }
       .step-num {
         flex-basis: 15%;
         text-align: center;
-        background: linear-gradient(to right, transparent 5%, #fff 5% 8%, transparent 8% 92%, #fff 92% 95%,transparent 95%),
-        linear-gradient(rgba(0,0,0, 0.4) 5%, #fff 5% 8%, rgba(0,0,0, 0.4) 8% 92%, #fff 92% 95%,rgba(0,0,0, 0.4) 95%);
+        background:  rgba(0,0,0, 0.4);
         text-transform: uppercase;
         height: 100%;
         padding: 1.25rem;
@@ -105,11 +251,39 @@ footer {
 }
 
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1024px) {
   header {
     padding: 0;
     .brand-logo, .brand-info {
       flex-basis: 100%;
+    }
+  }
+  article {
+    padding: 5.625rem 5%;
+    flex-wrap: wrap;
+    .summary, .cart {
+      flex-basis: 100%;
+    }
+    .cart {
+      .cart-props {
+        th {
+          width: 24%;
+          font-size: 1.165rem;
+        }
+      }
+      .cart-item {
+        .item {
+          flex-wrap: wrap;
+        }
+        .price, .qty, .total-cost {
+          text-align: right;
+        }
+        .qty {
+          .qty-num {
+            margin-left: auto;
+          }
+        }
+      }
     }
   }
   footer {
